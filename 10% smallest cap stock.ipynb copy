@@ -1,0 +1,187 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# N Smallest Capitalization Stock"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. Set the number of stocks want to trade, N.\n",
+    "1. 设定好要交易的股票数量stocksnum\n",
+    "\n",
+    "2. Find the first N number of stocks with the smallest market capitalization.\n",
+    "2. 每天找出市值排名最小的前stocksnum只股票作为要买入的股票。\n",
+    "\n",
+    "3. Sell the stock if the price of the current stock holding is not small enough anymore (no in the list of N stocks)\n",
+    "3. 若已持有的股票的市值已经不够小而不在要买入的股票中，则卖出这些股票。\n",
+    "\n",
+    "4. Buy the new stocks from the current list of N stocks with the smallest market capitalization.\n",
+    "4. 买入要买入的股票，买入金额为当前可用资金的stocksnum分之一。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'pandas_datareader'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-1-6b3b2be3895e>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mget_ipython\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrun_line_magic\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'matplotlib'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'inline'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcore\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcommon\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mis_list_like\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mapi\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtypes\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mis_list_like\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 6\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mpandas_datareader\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdata\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mweb\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      7\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mfix_yahoo_finance\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0myf\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'pandas_datareader'"
+     ]
+    }
+   ],
+   "source": [
+    "import datetime\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "%matplotlib inline\n",
+    "pd.core.common.is_list_like = pd.api.types.is_list_like\n",
+    "import pandas_datareader.data as web\n",
+    "import fix_yahoo_finance as yf"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "pd.set_option('expand_frame_repr', False)\n",
+    "\n",
+    "#open, high, low, close, volumn, adjVolumn, date\n",
+    "\n",
+    "#import dataset from Yahoo_finance 导入数据\n",
+    "stock_data = pd.read_csv('',encoding = 'gbk')\n",
+    "stock_data.columns = [i.encode('utf8') for i in stock_data.columns]\n",
+    "stock_data['交易日期'] = pd.to_datetime(stock_data['交易日期'])\n",
+    "\n",
+    "#Sort the time排序\n",
+    "stock_data.sort_values(by=['date','close', inplacee = True])\n",
+    "\n",
+    "#开始的时间太早？\n",
+    "stock_data = stock_data[stock_data['date'] > pd.to_datetime('2016-11-01')]\n",
+    "\n",
+    "#删去月末停牌？最后一天不交易，不能买入\n",
+    "stock_data = stock_data[stock_data['是否交易'] != 0]\n",
+    "\n",
+    "#该月交易时间过短，去除?\n",
+    "stock_data = stock_data[stock_data['交易天数'] >= 10]\n",
+    "\n",
+    "#计算所以股票在下个月的平均涨幅\n",
+    "output = pd.DataFrame()\n",
+    "output['所有股票下个月的涨幅'] = stock_data.groupby('交易日期')['下月涨幅'].mean()\n",
+    "\n",
+    "#计算每月市值排名\n",
+    "stock_data['市值_排名'] = stock_data.groupby('交易日期')['总市值'].rank()\n",
+    "\n",
+    "#Pick the top 30 stocks -- lowest market cap\n",
+    "stock_data = stock_data['市值_排名'] <= 30\n",
+    "\n",
+    "#create a list that contains the top 30 stocks.\n",
+    "buylist = []\n",
+    "    for i in range(30):\n",
+    "        \n",
+    "        \n",
+    "\n",
+    "        \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def initialize(context):\n",
+    "      run_daily(period,time='every_bar')\n",
+    "      # 设定好要交易的股票数量stocksnum\n",
+    "      g.stocksnum = 10\n",
+    "\n",
+    "def period(context):\n",
+    "      # 代码：找出市值排名最小的前stocksnum只股票作为要买入的股票\n",
+    "      # 获取上证指数和深证综指的成分股代码并连接，即为全A股市场所有股票的股票代码\n",
+    "      # 用加号可以连接两个list\n",
+    "    scu = get_index_stocks('000001.XSHG')+get_index_stocks('399106.XSHE')\n",
+    "      # 选出在scu内的市值排名最小的前stocksnum只股票\n",
+    "    q=query(valuation.code\n",
+    "                  ).filter(\n",
+    "                      valuation.code.in_(scu)\n",
+    "                  ).order_by(\n",
+    "                      valuation.market_cap.asc()\n",
+    "                  ).limit(g.stocksnum)\n",
+    "    df = get_fundamentals(q)\n",
+    "      # 选取股票代码并转为list\n",
+    "    buylist=list(df['code'])\n",
+    "\n",
+    "      # 代码：若已持有的股票的市值已经不够小而不在要买入的股票中，则卖出这些股票。\n",
+    "      # 对于每个当下持有的股票进行判断：现在是否已经不在buylist里，如果是则卖出\n",
+    "    for stock in context.portfolio.positions:\n",
+    "        if stock not in buylist: #如果stock不在buylist\n",
+    "            order_target(stock, 0) #调整stock的持仓为0，即卖出\n",
+    "\n",
+    "      # 代码：买入要买入的股票，买入金额为可用资金的stocksnum分之一\n",
+    "      # 将资金分成g.stocksnum份\n",
+    "        position_per_stk = context.portfolio.cash/g.stocksnum\n",
+    "      # 用position_per_stk大小的g.stocksnum份资金去买buylist中的股票\n",
+    "    for stock in buylist:\n",
+    "        order_value(stock, position_per_stk)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
