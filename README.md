@@ -9,3 +9,36 @@ With the development of Quantitative Trading, python has already transferred lot
 Our goal:
 We are planning to implement several classical mathematics models into practice through python and evaluate their performance using financial data.
 We will choose some quantitative trading strategies, some of which are the latest ones and some of which are popular in the fields now. The operational mechanism of those strategies is exactly the function we would like to realize in our coding----when, what, and how much to trade given a certain circumstance in the market. To do so, we will scrape data from web to test the strategies’ efficiency and their precision of forecasting and yields.
+
+
+•	A description of what has been implemented
+
+1.	We got a set of daily stock data from Yahoo Finance to use to build our stock investing strategies. The data describes daily: open price, close price, highest price, lowest price, volume of the day for a total of X stocks for the time period from 2017-11-20 to 2018-11-19.
+2.	Our investing strategies are mainly designed for short-term (daily, T+1) stock allocation.
+
+
+Strategy 1: Small-Cap Investing
+Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to your allocation based on the changes in the list of stocks that belongs to the N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed.
+In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change.
+
+
+
+
+•	Installation instructions (if any besides cloning the repo)
+•	Python packages should be listed appropriately in requirements.txt
+
+1.	Numpy
+2.	Pandas
+3.	
+
+
+•	Run instructions
+•	What do I need to type to get your program to do its thing
+
+1.	To get data from Yahoo Finance:
+a.	Install Fix_Yahho_Finance using:
+b.	pip….
+2.	To apply strategies and get the portfolio for stocks choices:
+a.	Code need to run
+3.	 Compare the rate of return for different strategies
+a.	Code need to run
