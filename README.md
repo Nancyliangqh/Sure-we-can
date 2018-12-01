@@ -1,8 +1,11 @@
-# Project for 4501
-Group name: Sure-we-can
-Group Members: Qihan Liang, Qinxin Wu, Wenda Guo, Xia Chu
 
 ## Topic: Python Applied in Quantitative Trading
+
+Project for 4501
+
+Group name: Sure-we-can
+
+Group Members: Qihan Liang, Qinxin Wu, Wenda Guo, Xia Chu
 
 **Backgrounds:**
 With the development of Quantitative Trading, python has already transferred lots of  mathematical models into practical applications with more profits. It plays an important role in financial industry since it helps us to make decisions more efficiently and accurately in this rapidly changing world. However, capital market can always be influenced by many factors. Especially, the stock fluctuates in a way that is hard to detect. In order to catch the opportunity and maximize the profit, we need to apply different strategies to find better a prediction for the stock market.
