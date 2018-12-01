@@ -1,9 +1,8 @@
-## Project for 4501
-# Group name: Sure-we-can
-
+# Project for 4501
+Group name: Sure-we-can
 Group Members: Qihan Liang, Qinxin Wu, Wenda Guo, Xia Chu
 
-# Topic: Python Applied in Quantitative Trading
+## Topic: Python Applied in Quantitative Trading
 
 **Backgrounds:**
 With the development of Quantitative Trading, python has already transferred lots of  mathematical models into practical applications with more profits. It plays an important role in financial industry since it helps us to make decisions more efficiently and accurately in this rapidly changing world. However, capital market can always be influenced by many factors. Especially, the stock fluctuates in a way that is hard to detect. In order to catch the opportunity and maximize the profit, we need to apply different strategies to find better a prediction for the stock market.
@@ -21,6 +20,7 @@ We will choose some quantitative trading strategies, some of which are the lates
 
 
 **Strategy 1: Small-Cap Investing**
+
 Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to your allocation based on the changes in the list of stocks that belongs to the N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change.
 *Procedures*
 1. Set the number of stocks want to trade, N.
@@ -30,6 +30,7 @@ Choosing stock portfolio based on N stocks with the smallest market capitalizati
 
 
 **Stratefy 3: Markowitz Model Investing**
+
 Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios. Generating a large number of random portfolio from the existed stock pool, 
 
 
