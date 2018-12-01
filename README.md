@@ -34,8 +34,7 @@ Choosing stock portfolio based on N stocks with the smallest market capitalizati
 
 **Stratefy 3: Markowitz Model Investing**
 
-Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios. Generating a large number of random portfolio from the existed stock pool, 
-
+Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios. Generating a large number of random portfolios from the existed stock pool, picking up the portofolio with high sharpe ratio(return per risk). Also, we use a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool.
 
 
 
@@ -44,7 +43,9 @@ Choosing stock portfolio based on Markowitz mean-variance model, which is based 
 
 1.	Numpy
 2.	Pandas
-3.	
+3.	scipy
+4. matplotlib
+5. fix_yahoo_finance
 
 
 •	Run instructions
