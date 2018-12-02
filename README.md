@@ -13,20 +13,21 @@ We implemented three quantitative trading strategies using python and evaluated 
 
 
 ---
-**Strategy 1: Markowitz Model Investing(theoratical analysis)**
+**Strategy 1: Markowitz Model(theoratical analysis)**
 
-Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, picking up the portofolio with high sharpe ratio(return per risk). Also, we use a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool.
+Choosing stock portfolio with Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, divide the stock pool into three sets. Picking up the portofolio using a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool respectively. Later using these three optimal portfolios to generate a new optimal solution, which is the result we want. In general, we modified the Markowitz model with greedy algorithm, which reachs a satisfying outcome. And we take it as the base in comparison.
 1. Use log function to generate the return of each stock	
 2.	Generate 1000 random portfolio to make simulations
-3.	Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
-4. Find the point with highest rate of return and least volatility
-5.  Draw graphs to clarify the results and make it as the basis for later comparison
+3.	Divide stock pool into 3 parts and figure out the optimal solution in each set
+4. Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
+5. Utilizing three optimal solutions to get an optimal solution for the original problem, which is greedy algorithm
+6. Draw graphs to clarify the results and make it as the base for later comparison
 
 
 ---
-**Strategy 2: High-Yield Investing**
+**Strategy 2: Alpaca Model**
 
-The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The High-yield Investing model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple High-yield Investing model, we assume that the asset used to buy each stock is equally distributed.
+The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The alpaca model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple Alpaca Model, we assume that the asset used to buy each stock is equally distributed.
 
 *Procedures*
 1. Set N number of stocks to put in portfolio and the total initial asset wanted to use. In our specific model, we chose N = 30.
@@ -38,7 +39,7 @@ The most common strategy for investment is always choosing the stock with the hi
 
 
 ---
-**Strategy 3: Small-Cap Investing**
+**Strategy 3: Small-Cap Model**
 
 The most popular short_term strategy is choosing stocks with the smallest market capitalization as they have more chances to increase in values. Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change (the next stock exchange day).
 
@@ -65,7 +66,7 @@ The most popular short_term strategy is choosing stocks with the smallest market
 **Expected Output**
 
 
-As yield curves from three strategies showed, Markowitz Model gave the highest yield and High-Yield Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from High-Yield Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then High-Yield Model and we might could use this strategy for investment in the future.
+As yield curves from three strategies showed, Markowitz Model gave the highest yield and Alpaca Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from Alpaca Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then Alpaca Model and we might could use this strategy for investment in the future.
 
 
 ---
