@@ -36,32 +36,33 @@ b.	Get data and down lowad as 'csv' file
 
 **Strategy 2: High-yield Investing**
 
-The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the list of stocks. In the High-yield Investing model, we get top 30 stocks whoes yield is high every day, and then decide to sell or keep former stocks or buy new ones in the list for acquiruing more profits with the portfolio.
+The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The High-yield Investing model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple High-yield Investing model, we assume that the asset used to buy each stock is equally distributed.
 
 *Procedures*
-1. input the start_date you want to enter the market, the original asset you want invest.
-2. calculate yield by changes in market capitalization and choose top 30 stocks.
-3. buy all 30 stocks on the first day and make changes every day by comparing today's list with the last trading day's list
-  sell:  all stocks appeared in the last trading day's list not today's.
-  keep: stocks appeard in the both lists
-  buy:  N stocks appear in the today'list not the last trading day's( N is decided by the total cash owned  and the price that    day).
-4. calculate the total yield for comparing with other strategies.
+1. Set N number of stocks to put in portfolio and the total initial asset wanted to use. In our specific model, we chose N = 30.
+2. Calculate yield by changes in market capitalization and choose top 30 stocks with the highest yield to make our stock combination.
+3. Buy all 30 stocks on the first day and make changes on every trading day by comparing the combinations from 2 days:
+  * Sell the stock if it was in the last trading day's combination but not in today's. 
+  * Buy the stock if it is in today's stock combination not the last trading day's (number of shares to buy is decided by the total asset available and the price of the stock that day).
+4. Repeat step3 for every day included in our dataset to perform stock reallocation on every trading day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
 
 
 **Strategy 3: Small-Cap Investing**
 
-The most popular short_term strategy is choosing stocks with the smallest market capitalization as they have more chances to increase in values. Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to your allocation based on the changes in the list of stocks that belongs to the N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change (the next stock exchange day).
+The most popular short_term strategy is choosing stocks with the smallest market capitalization as they have more chances to increase in values. Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change (the next stock exchange day).
 
 *Procedures*
-1. Set the number of stocks want to trade, N = 30 and the total initial asset wanted to use.
+1. Set the number of stocks to put in portfolio, N = 30 and the total initial asset wanted to use.
 2. Find the first 30 number of stocks with the smallest market capitalization of the day to form our initial combination. 
 3. Compare with top 30 smallest the next day to determine what stocks and how many shares to sell or buy:
   * Sell the stock if the market capitalization of the current holding stock is not small enough anymore (not in the new combination of 30 stocks)
   * Evenly distribute available asset to buy new stocks (from the current combination of 30 stocks with the smallest market capitalization).
-4. Repeat step3 for every day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
+4. Repeat step3 for every trading day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
-Sources:
+
+Reference:
+
 Markowitz model:
 https://blog.quantopian.com/markowitz-portfolio-optimization-2/
 https://medium.com/python-data/effient-frontier-in-python-34b0c3043314
