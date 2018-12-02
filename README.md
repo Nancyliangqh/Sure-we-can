@@ -15,12 +15,13 @@ We implemented three quantitative trading strategies using python and evaluated 
 ---
 **Strategy 1: Markowitz Model Investing(theoratical analysis)**
 
-Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, picking up the portofolio with high sharpe ratio(return per risk). Also, we use a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool.
+Choosing stock portfolio with Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, divide the stock pool into three sets. Picking up the portofolio using a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool respectively. Later using these three optimal portfolios to generate a new optimal solution, which is the result we want. In general, we modified the Markowitz model with greedy algorithm, which reachs a satisfying outcome. And we take it as the base in comparison.
 1. Use log function to generate the return of each stock	
 2.	Generate 1000 random portfolio to make simulations
-3.	Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
-4. Find the point with highest rate of return and least volatility
-5.  Draw graphs to clarify the results and make it as the basis for later comparison
+3.	Divide stock pool into 3 parts and figure out the optimal solution in each set
+4. Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
+5. Utilizing three optimal solutions to get an optimal solution for the original problem, which is greedy algorithm
+6. Draw graphs to clarify the results and make it as the base for later comparison
 
 
 ---
