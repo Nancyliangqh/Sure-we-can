@@ -1,0 +1,1 @@
+Python packages that need to install or update:NumpyPandasDatetimeRandomReMatplotlibPandas_Datareader needs to update to the latest versionFix_yahoo_financeScipy.optimize Scipy.interpolate
