@@ -11,7 +11,7 @@ With the development of Quantitative Trading, python has already transferred lot
 **Our goal:**
 We implemented three quantitative trading strategies using python and evaluated their performance by comparing their rate of returns for a period of 2 years. The first strategy is the theoratical analysis of classic theory -- Markowitz Model and the later two strategies are the ones popular to use in the field now. The dataset used for our project includeds daily close price and volume of the day for the most active 263 stocks from Yahho Finance for the past two-year time period from 2016-11-21 to 2018-11-20.
 
-
+---
 **Strategy 1: Markowitz Model Investing(theoratical analysis)**
 
 Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, picking up the portofolio with high sharpe ratio(return per risk). Also, we use a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool.
@@ -33,7 +33,7 @@ b.	Get data and down lowad as 'csv' file
 6. Find the point with highest rate of return and least volatility
 7.  Draw graphs to clarify the results and make it as the basis for later comparison
 
-
+---
 **Strategy 2: High-yield Investing**
 
 The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The High-yield Investing model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple High-yield Investing model, we assume that the asset used to buy each stock is equally distributed.
@@ -47,7 +47,7 @@ The most common strategy for investment is always choosing the stock with the hi
 4. Repeat step3 for every day included in our dataset to perform stock reallocation on every trading day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
 
-
+---
 **Strategy 3: Small-Cap Investing**
 
 The most popular short_term strategy is choosing stocks with the smallest market capitalization as they have more chances to increase in values. Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change (the next stock exchange day).
@@ -60,8 +60,8 @@ The most popular short_term strategy is choosing stocks with the smallest market
   * Evenly distribute available asset to buy new stocks (from the current combination of 30 stocks with the smallest market capitalization).
 4. Repeat step3 for every trading day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
-
-Reference:
+---
+**Reference:**
 
 1. Wiecki, T. (2015, March 9). The Efficient Frontier: Markowitz portfolio optimization in Python. Retrieved from https://blog.quantopian.com/markowitz-portfolio-optimization-2/
 
