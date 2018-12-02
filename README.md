@@ -64,7 +64,7 @@ The most popular short_term strategy is choosing stocks with the smallest market
 ---
 **Expected Output**
 
-
+As we see in the yield curve, Markowitz Model shows the highest yield and High-Yield Model shows the lowest yield.  In fact, Markowitz Model is the theoretical analysis which only focuses on the systematic risk of the whole market and ignores corporates’ factors that may affect the price. Based on probability and statistics, we get an ideal result, but it won’t make so much sense in reality. Then, we choose High-Yield Model, the most common strategy for investment, to choose stocks with highest yield. However, the stock price fluctuates frequently every day, so the portfolio can also change greatly compared with the former one. Due to frequent changes, we cannot share the value increments for one specific stock during a time period, that’s why we have the lowest yield using this model. Finally, we choose the more popular small-cap model to invest stocks with small capitalization as they have more chances to increase in values during a time period. Capitalization will be stable during one period, so our everyday’ portfolio won’t change greatly and we can share more returns through holding a stock for some time. Thus, the small-cap model gives us the best yield and we can use this strategy for investment in the future.
 
 
 
