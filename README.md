@@ -58,15 +58,20 @@ The most popular short_term strategy is choosing stocks with the smallest market
 •	What do I need to type to get your program to do its thing
 
 1. cloning the repo: 
-2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type `pip install fix_yahoo_finance --upgrade --no-cache-dir` at terminal
+2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type `pip install fix_yahoo_finance --upgrade --no-cache-dir` at terminal (We got our data from Yahoo Finance. However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
 3. 
 
 
 ---
 **Expected Output**
 
+![Image](https://github.com/Nancyliangqh/Sure-we-can/blob/master/Markowitz.png)
 
-As yield curves from three strategies showed, Markowitz Model gave the highest yield and Alpaca Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from Alpaca Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then Alpaca Model and we might could use this strategy for investment in the future.
+![Image](https://github.com/Nancyliangqh/Sure-we-can/blob/master/Alpaca.png)
+
+![Image](https://github.com/Nancyliangqh/Sure-we-can/blob/master/SmallCap.png)
+
+As yield curves from three strategies showed, Markowitz Model gave the highest yield and Alpaca Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from Alpaca Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then Alpaca Model and we might be able to use this strategy for investment in the future.
 
 
 ---
