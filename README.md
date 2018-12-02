@@ -24,14 +24,14 @@ Choosing stock portfolio based on Markowitz mean-variance model, which is based 
 •	What do I need to type to get your program to do its thing
 
 1.  cloning the repo:
-
 2.	To get data from Yahoo Finance:
-a.	Install Fix_Yahho_Finance using:
-b.	pip….
-3.	To apply strategies and get the portfolio for stocks choices:
-a.	Code need to run
-4.	 Compare the rate of return for different strategies
-a.	Code need to run
+a.	Install Fix_Yahho_Finance using import
+b.	Get data and down lowad as 'csv' file
+3.	Use log function to generate the return of each stock	
+4.	Generate 1000 random portfolio to make simulations
+5.	Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
+6. Find the point with highest rate of return and least volatility
+7.  Draw graphs to clarify the results and make it as the basis for later comparison
 
 
 **Strategy 2: High-yield Investing**
@@ -61,3 +61,7 @@ The most popular short_term strategy is choosing stocks with the smallest market
   * Evenly distribute available asset to buy new stocks (from the current combination of 30 stocks with the smallest market capitalization).
 4. Repeat step3 for every day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
+Sources:
+Markowitz model:
+https://blog.quantopian.com/markowitz-portfolio-optimization-2/
+https://medium.com/python-data/effient-frontier-in-python-34b0c3043314
