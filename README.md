@@ -51,12 +51,13 @@ The most popular short_term strategy is choosing stocks with the smallest market
 4. Repeat step3 for every trading day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
 
 
---
+---
 **Run Instruction**
+
 •	What do I need to type to get your program to do its thing
 
 1. cloning the repo: 
-2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type 'pip install fix_yahoo_finance --upgrade --no-cache-dir' at terminal
+2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type `pip install fix_yahoo_finance --upgrade --no-cache-dir` at terminal
 3. 
 
 
