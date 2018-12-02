@@ -1,37 +1,27 @@
 
 ## 4501 Project: Python Applied in Stock Investing Strategies
 
-Group name: Sure-we-can
+**Group name:** Sure-we-can
 
-Group Members: Wenda Guo, Qihan Liang, Qinxin Wu, Xia Chu
+**Group Members:** Wenda Guo, Qihan Liang, Qinxin Wu, Xia Chu
 
 **Backgrounds:**
 With the development of Quantitative Trading, python has already transferred lots of  mathematical models into practical applications with more profits. It plays an important role in financial industry since it helps us to make decisions more efficiently and accurately in this rapidly changing world. However, capital market can always be influenced by many factors. Especially, the stock fluctuates in a way that is hard to detect. In order to catch the opportunity and maximize the profit, we need to apply different strategies to find better a prediction for the stock market.
 
 **Our goal:**
-We implemented three quantitative trading strategies using python and evaluated their performance by comparing their rate of returns for a period of 2 years. The first strategy is the theoratical analysis of classic theory -- Markowitz Model and the later two strategies are the ones popular to use in the field now. The dataset used for our project includeds daily close price and volume of the day for the most active 263 stocks from Yahho Finance for the past two-year time period from 2016-11-21 to 2018-11-20.
+We implemented three quantitative trading strategies using python and evaluated their performance by comparing their rate of returns for a period of 2 years. The first strategy is the theoretical analysis of classic theory -- Markowitz Model and the later two strategies are the ones popular to use in the field now. The dataset used for our project includeds daily close price and volume of the day for the most active 263 stocks from Yahho Finance for the past two-year time period from 2016-11-21 to 2018-11-20.
+
 
 ---
 **Strategy 1: Markowitz Model Investing(theoratical analysis)**
 
 Choosing stock portfolio based on Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, picking up the portofolio with high sharpe ratio(return per risk). Also, we use a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool.
+1. Use log function to generate the return of each stock	
+2.	Generate 1000 random portfolio to make simulations
+3.	Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
+4. Find the point with highest rate of return and least volatility
+5.  Draw graphs to clarify the results and make it as the basis for later comparison
 
-
-•	Installation instructions (if any besides cloning the repo)
-
-
-•	Run instructions
-•	What do I need to type to get your program to do its thing
-
-1.  cloning the repo:
-2.	To get data from Yahoo Finance:
-a.	Install Fix_Yahho_Finance using import
-b.	Get data and down lowad as 'csv' file
-3.	Use log function to generate the return of each stock	
-4.	Generate 1000 random portfolio to make simulations
-5.	Use Markowitz model to calculate the mean rate of return and volatility of each portfolio
-6. Find the point with highest rate of return and least volatility
-7.  Draw graphs to clarify the results and make it as the basis for later comparison
 
 ---
 **Strategy 2: High-yield Investing**
@@ -59,6 +49,24 @@ The most popular short_term strategy is choosing stocks with the smallest market
   * Sell the stock if the market capitalization of the current holding stock is not small enough anymore (not in the new combination of 30 stocks)
   * Evenly distribute available asset to buy new stocks (from the current combination of 30 stocks with the smallest market capitalization).
 4. Repeat step3 for every trading day included in our dataset to perform stock reallocation on every stock exchange day and calculate the change in rate of return for time period from 2016-11-21 to 2018-11-20.
+
+
+--
+**Run Instruction**
+•	What do I need to type to get your program to do its thing
+
+1. cloning the repo: 
+2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type 'pip install fix_yahoo_finance --upgrade --no-cache-dir' at terminal
+3. 
+
+
+---
+**Expected Output**
+
+
+
+
+
 
 ---
 **Reference:**
