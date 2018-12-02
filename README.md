@@ -25,9 +25,9 @@ Choosing stock portfolio with Markowitz mean-variance model, which is based on t
 
 
 ---
-**Strategy 2: High-Yield Investing**
+**Strategy 2: Alpaca Model**
 
-The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The High-yield Investing model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple High-yield Investing model, we assume that the asset used to buy each stock is equally distributed.
+The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The alpaca model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple Alpaca Model, we assume that the asset used to buy each stock is equally distributed.
 
 *Procedures*
 1. Set N number of stocks to put in portfolio and the total initial asset wanted to use. In our specific model, we chose N = 30.
@@ -66,7 +66,7 @@ The most popular short_term strategy is choosing stocks with the smallest market
 **Expected Output**
 
 
-As yield curves from three strategies showed, Markowitz Model gave the highest yield and High-Yield Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from High-Yield Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then High-Yield Model and we might could use this strategy for investment in the future.
+As yield curves from three strategies showed, Markowitz Model gave the highest yield and Alpaca Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from Alpaca Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then Alpaca Model and we might could use this strategy for investment in the future.
 
 
 ---
