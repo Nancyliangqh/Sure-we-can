@@ -13,7 +13,7 @@ We implemented three quantitative trading strategies using python and evaluated 
 
 
 ---
-**Strategy 1: Markowitz Model Investing(theoratical analysis)**
+**Strategy 1: Markowitz Model(theoratical analysis)**
 
 Choosing stock portfolio with Markowitz mean-variance model, which is based on the expected returns (mean) and the standard deviation (variance) of different portfolios in a time period. Generating a large number of random portfolios from the existed stock pool, divide the stock pool into three sets. Picking up the portofolio using a package to find the optimal portofolio with highest rate of return and the proportion of the choosing stocks in the pool respectively. Later using these three optimal portfolios to generate a new optimal solution, which is the result we want. In general, we modified the Markowitz model with greedy algorithm, which reachs a satisfying outcome. And we take it as the base in comparison.
 1. Use log function to generate the return of each stock	
@@ -39,7 +39,7 @@ The most common strategy for investment is always choosing the stock with the hi
 
 
 ---
-**Strategy 3: Small-Cap Investing**
+**Strategy 3: Small-Cap Model**
 
 The most popular short_term strategy is choosing stocks with the smallest market capitalization as they have more chances to increase in values. Choosing stock portfolio based on N stocks with the smallest market capitalization, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of smallest market capitalization. In a simple Small-Cap Investing model, we assume that the asset used to buy each stock is equally distributed. In our specific model, we chose N = 30 as the number of stocks will be considered for allocation every time we want to perform a change (the next stock exchange day).
 
