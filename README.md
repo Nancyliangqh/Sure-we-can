@@ -24,7 +24,7 @@ Choosing stock portfolio based on Markowitz mean-variance model, which is based 
 
 
 ---
-**Strategy 2: High-yield Investing**
+**Strategy 2: High-Yield Investing**
 
 The most common strategy for investment is always choosing the stock with the highest yield, and make quick changes to the allocation based on the changes in the combination of stocks. The High-yield Investing model chooses stock portfolio based on N stocks with the highest yield, and make changes to allocation based on the changes in the list of stocks that belongs to the top N number of highest yields. In a simple High-yield Investing model, we assume that the asset used to buy each stock is equally distributed.
 
@@ -64,9 +64,8 @@ The most popular short_term strategy is choosing stocks with the smallest market
 ---
 **Expected Output**
 
-As we see in the yield curve, Markowitz Model shows the highest yield and High-Yield Model shows the lowest yield.  In fact, Markowitz Model is the theoretical analysis which only focuses on the systematic risk of the whole market and ignores corporates’ factors that may affect the price. Based on probability and statistics, we get an ideal result, but it won’t make so much sense in reality. Then, we choose High-Yield Model, the most common strategy for investment, to choose stocks with highest yield. However, the stock price fluctuates frequently every day, so the portfolio can also change greatly compared with the former one. Due to frequent changes, we cannot share the value increments for one specific stock during a time period, that’s why we have the lowest yield using this model. Finally, we choose the more popular small-cap model to invest stocks with small capitalization as they have more chances to increase in values during a time period. Capitalization will be stable during one period, so our everyday’ portfolio won’t change greatly and we can share more returns through holding a stock for some time. Thus, the small-cap model gives us the best yield and we can use this strategy for investment in the future.
 
-
+As yield curves from three strategies showed, Markowitz Model gave the highest yield and High-Yield Model gave the lowest yield. In fact, Markowitz Model is a theoretical analysis that only focuses on the systematic risk of the entire stock market yet ignores corporate factors that may affect the stock prices. Thus, we got an ideal result based on statistics and probabilities, but it does not make much sense in the real market. Then, we checked the yield generated from High-Yield Model, the most common strategy for investment. As the stock prices fluctuates frequently every day, the highest stocks combination picked also changes greatly compare to the Markowitz Model. Due to the frequent changes, we cannot share the value increments for one specific stock during a time period, thus led to a very low yield in return. Finally, we chose a more popular model Small-Cap Model to determine the stocks to hold based on small capitalization as they have more potential to increase in values throughout the time. Capitalization will be stable during a time period, so our everyday-portfolio will not change greatly and thus share more returns through holding a stock for certain days. Looking at at the yield from Small-Cap Model, it gives us a better yield then High-Yield Model and we might could use this strategy for investment in the future.
 
 
 ---
