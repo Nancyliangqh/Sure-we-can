@@ -55,11 +55,16 @@ The most popular short_term strategy is choosing stocks with the smallest market
 ---
 **Run Instruction**
 
-•	What do I need to type to get your program to do its thing
+1. clon the repo (Download Zip from repo) from `https://github.com/Nancyliangqh/Sure-we-can.git` [link](https://github.com/Nancyliangqh/Sure-we-can.git)
+2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type `pip install fix_yahoo_finance --upgrade --no-cache-dir` at terminal and import packages using `import pandas_datareader.data as web` and `import fix_yahoo_finance as yf` to scrape data from Yahoo Finance
+   * Use code `yf.pdr_override()` and 
+   * For example, use `web.get_data_yahoo('MS', start = '2016-11-20', end = '2018-11-20')` 
+   
+   to get the stock data for MS from 2016-11-20 to 2018-11-20, or any other time period wanted.
 
-1. cloning the repo: 
-2. To use fixed Yahoo_Install Fix_Yahho_Finance package: type `pip install fix_yahoo_finance --upgrade --no-cache-dir` at terminal (We got our data from Yahoo Finance. However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
-3. 
+  (We got our data from Yahoo Finance. However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
+
+3. Go to the Trading Strategies.ipynb and run all the cells to get yields from three strategies.
 
 
 ---
