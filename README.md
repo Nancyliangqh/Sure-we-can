@@ -60,11 +60,13 @@ The most popular short_term strategy is choosing stocks with the smallest market
    * Use code `yf.pdr_override()` and 
    * For example, use `web.get_data_yahoo('MS', start = '2016-11-20', end = '2018-11-20')` 
    
-   to get the stock data for MS from 2016-11-20 to 2018-11-20, or any other time period wanted.
+   to get the stock data for MS from 2016-11-20 to 2018-11-20, or any other time period wanted. 
+   
+   The file `get dataset.csv` includes our code of getting data from Yahoo Finance through the procedues mentioned above.
 
-  (We got our data from Yahoo Finance. However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
+  (However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
 
-3. Go to the Trading Strategies.ipynb and run all the cells to get yields from three strategies.
+4. Go to the Trading Strategies.ipynb and run all the cells to get yields from three strategies.
 
 
 ---
