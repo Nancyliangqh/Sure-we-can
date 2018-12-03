@@ -66,7 +66,7 @@ The most popular short_term strategy is choosing stocks with the smallest market
 
   (However, the portal might not be stable over the time. In order to keep our data consistent throughout the usage, we saved the data into a csv called 'Data.csv' for all later usage. 
 
-4. Go to the `Trading Strategies.ipynb` and run all the cells to get yields from three strategies.
+3. Go to the `Trading Strategies.ipynb` and run all the cells to get yields from three strategies.
 
 
 ---
