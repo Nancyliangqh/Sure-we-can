@@ -85,3 +85,6 @@ As yield curves from three strategies showed, Markowitz Model gave the highest y
 1. Wiecki, T. (2015, March 9). The Efficient Frontier: Markowitz portfolio optimization in Python. Retrieved from https://blog.quantopian.com/markowitz-portfolio-optimization-2/
 
 2. Brenyah, B. (2017, October 21). Markowitz's Efficient Frontier in Python [Part 1/2]. Retrieved from https://medium.com/python-data/effient-frontier-in-python-34b0c3043314
+
+3. Brokamp, R. (2008, May 30). Investing Strategies: Small-Cap Investing. Retrieved from https://www.fool.com/how-to-invest/investing-strategies-small-cap-investing.aspx
+
